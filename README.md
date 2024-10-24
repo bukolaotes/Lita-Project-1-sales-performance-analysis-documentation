@@ -7,7 +7,7 @@ This project aims to analyze monthly sales performance across different regions 
 
 ### Data Description:
 
-The dataset "salesdata.csv" file  contains sales transaction records for the last two years, including columns like date, region, product type,  amount per unit, number of units sold.
+The dataset "salesdata.xls" file  contains sales transaction records for the last two years, including columns like date, region, product type,  amount per unit, number of units sold.
 
 
 ### Tools
@@ -57,11 +57,24 @@ WHERE COND=2;
 ### RESULTS/FINDINGS
 
 
+The South region sold 24,298 products which is 35% of the total products of the retail store. The west region sold the lowest products of 11,400 which is 17% of the total products.
+In the month of February has the highest sales of product which is 9930 (15%), which may be due to marking of valentine’s day.
+Hat product has the highest value of15929 products sold which is 23%, while Jacket product sold the lowest products (5452)8%.
+East Region has the highest count of number of transactions (2483), while west has lowest count of number of transactions (2477) which is due to cultural dressing differences.
+Shoes has highest revenue of #613,380, while socks have lowest revenue of #180,785, from the region of south #927,820 was the highest Revenue made from the four regions, west region made the lowest revenue.
 
 
 
-#### Recommendation
 
+
+
+
+### Recommendation
+
+
+ Focus marketing efforts on top-performing regions and product lines.
+ Address underperforming regions or product categories with targeted strategies
+ Explore opportunities for cross-selling or upselling
 
 
 ### Visualizations and Reporting:
