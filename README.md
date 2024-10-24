@@ -13,7 +13,6 @@ The dataset "salesdata.xls" file  contains sales transaction records for the las
 ### Tools
 
 - Excel - Data cleaniing and creating of pivot tables
-   - [Download here](https://microsoft.com)
 - postgresql - Data Analytics
 - Power BI - Creating of reports
 
@@ -45,13 +44,132 @@ EDA involved exploring the sales data to answer key questions,such as :
 
 
 
-include  some interesting code?features worked with
+```
+Create table salesdata(Order_ID integer not null,
+					   Customer_Id varchar(50),
+					   Product varchar(50),
+					   Region	varchar(50),
+					   Order_Date	date,
+					   Quantity integer,
+					   Unit_Price integer
+					   );
+```
+
+
+select *  from salesdata
+
+```
+----IMPORT DATASET---
+
 
 
 ```
-select  * from table
-WHERE COND=2;
+Select SUM(Quantity * Unit_Price) AS totalsalesvalue
+FROM salesdata
 ```
+
+
+```
+Select product,Sum(Quantity * Unit_Price) AS totalsalesvalue
+FROM salesdata
+group by product
+order by totalsalesvalue desc
+
+ ```
+
+
+
+Select region,count(*) AS
+number_of_sales
+from salesdata
+group by region;
+```
+
+```
+select product,sum(Quantity * Unit_Price) as totalsalesvalue
+from salesdata 
+group by product
+order by totalsalesvalue DESC
+LIMIT 1;
+```
+ 
+
+
+SELECT product,
+sum(Quantity * Unit_Price)  as totalrevenue
+from salesdata
+group by product
+order by totalrevenue desc
+
+```
+
+
+select DATE_TRUNC('month',order_date)
+AS month,
+     sum(Quantity * Unit_Price) AS totalsalesvalue
+
+from salesdata
+where
+    EXTRACT(YEAR FROM order_date) =
+EXTRACT(YEAR FROM CURRENT_DATE)
+GROUP BY
+    month
+order by 
+	month;
+
+```	
+
+
+
+	select 
+Customer_Id,
+sum(Quantity * Unit_Price) AS
+Total_purchaseamount
+from
+   salesdata
+ group by
+    Customer_id
+	order by
+	  Total_purchaseamount DESC
+	  LIMIT 5;
+```
+
+SELECT 
+Region,
+SUM(Quantity * Unit_Price) AS
+region_total,
+     (SUM(Quantity * Unit_Price) /
+	 total.total_sales * 100) AS
+	 percentage_of_total_sales
+	 FROM
+	     salesdata,
+		  (SELECT SUM(Quantity * Unit_Price) AS
+	total_sales FROM salesdata) AS total
+	GROUP BY
+	      Region,total.total_sales;
+       
+```   
+   
+  ``` 
+  WITH all_products AS(
+   SELECT DISTINCT product
+   FROM salesdata
+),
+recent_sales AS(
+ SELECT DISTINCT product
+FROM salesdata
+WHERE Order_Date>=NOW() - INTERVAL '3 months'
+)
+SELECT
+ap.product
+FROM
+all_products ap
+WHERE
+ap.product NOT IN (SELECT
+product from recent_sales);
+
+```
+
 
 
 ### RESULTS/FINDINGS
