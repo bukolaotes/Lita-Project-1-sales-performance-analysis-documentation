@@ -1,11 +1,11 @@
 # Sales Performance Analysis
 
-###Project Objective
+### Project Objective
 
 
 This project aims to analyze monthly sales performance across different regions and product lines to identify trends and areas for improvement.
 
-###Data Description:
+### Data Description:
 
 The dataset "salesdata.csv" file  contains sales transaction records for the last two years, including columns like date, region, product type,  amount per unit, number of units sold.
 
@@ -49,8 +49,18 @@ include  some interesting code?features worked with
 
 
 ```
+select  * from table
+WHERE COND=2;
+```
 
 
+### RESULTS/FINDINGS
+
+
+
+
+
+#### Recommendation
 
 
 - 
