@@ -8,7 +8,15 @@ This project aims to analyze monthly sales performance across different regions 
 
 ### Data Description:
 
-The dataset "salesdata.xls" file  contains sales transaction records for the last two years, including columns like date, region, product type,  amount per unit, number of units sold.
+The dataset "salesdata.xls" file  contains sales transaction records for the last two years, including columns like;
+
+- Region
+- Product
+- Unit price
+- Quantity
+- Customer ID
+- Order ID
+- Order date
 
 
 ### Tools
